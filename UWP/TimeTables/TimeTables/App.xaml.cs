@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLitePCL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +34,8 @@ namespace TimeTables
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            LoadDatabase();
         }
 
         /// <summary>
@@ -79,6 +82,24 @@ namespace TimeTables
             }
             // 确保当前窗口处于活动状态
             Window.Current.Activate();
+
+            // register a global listener for the BackRequested event
+            // You can register for this event in each page if you want to exclude specific pages from back navigation,
+            // or you want to execute page-level code before displaying the page.
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+            rootFrame.Navigated += (s, a) =>
+            {
+                if (rootFrame.CanGoBack)
+                {
+                    // Setting this visible is ignored on Mobile and when in tablet mode! 
+                    Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
+                }
+                else
+                {
+                    Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Collapsed;
+                }
+            };
         }
 
         /// <summary>
@@ -103,6 +124,41 @@ namespace TimeTables
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: 保存应用程序状态并停止任何后台活动
             deferral.Complete();
+        }
+
+        private void OnBackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            if (rootFrame == null)
+                return;
+
+            // Navigate back if possible, and if the event has not
+            // already been handled .
+            if (rootFrame.CanGoBack && e.Handled == false)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
+
+        public static SQLiteConnection conn;
+        private void LoadDatabase()
+        {
+            // Get a reference to the SQLite database
+            conn = new SQLiteConnection("lessons.db");
+            string sql = @"CREATE TABLE IF NOT EXISTS
+                          lessons (Id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                                    lessonName   VARCHAR( 140 ),
+                                    lessonTeacher VARCHAR( 140 ),
+                                    classRoom    VARCHAR( 140 ),
+                                    weekTime   INTEGER( 10 ),
+                                    startTime    INTEGER( 10 ),
+                                    endTime      INTEGER( 10 )
+                    );";
+            using (var statement = conn.Prepare(sql))
+            {
+                statement.Step();
+            }
         }
     }
 }
