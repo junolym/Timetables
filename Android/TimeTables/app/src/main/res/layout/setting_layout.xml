@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2FFF"
+    >
+
+    <Button
+        style="@style/settingItem"
+        android:layout_marginTop="15dp"
+        android:id="@+id/importCourses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="导入课表"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/addCourseSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加课程"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/moreScores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="其他成绩"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/setBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="背景设置"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/clearBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除背景"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/changeTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="主题切换"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/aboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="关于我们"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="意见反馈"
+        />
+
+    <Button
+        style="@style/settingItem"
+        android:id="@+id/checkUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="版本更新"
+        />
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">炒鸡课程表</string>
+    <string name="tab1">课程表</string>
+    <string name="tab2">查成绩</string>
+    <string name="tab3">倒计时</string>
+    <string name="tab4">设置</string>
+    <string-array name="weektime">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
+    <string-array name="jietime">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+</resources>

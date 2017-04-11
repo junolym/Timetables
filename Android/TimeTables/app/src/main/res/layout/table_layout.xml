@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1FFF"
+    >
+
+    <TextView android:id="@+id/text_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/weekdayStyle"
+        android:text=""
+        android:background="#9FFF"
+        />
+
+    <TextView android:id="@+id/monday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text_empty"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周一"
+        />
+    <TextView android:id="@+id/tuesday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/monday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周二"
+        />
+
+
+    <TextView android:id="@+id/wednesday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tuesday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周三"
+        />
+
+
+    <TextView android:id="@+id/thursday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/wednesday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周四"
+        />
+
+    <TextView android:id="@+id/friday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/thursday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周五"
+        />
+
+    <TextView android:id="@+id/saturday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/friday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周六"
+        />
+
+
+    <TextView android:id="@+id/sunday_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/saturday_course"
+        android:background="#9FFF"
+        style="@style/weekdayStyle"
+        android:text="周日"
+        />
+
+    <ScrollView
+        android:id="@+id/scroll_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_empty"
+        android:background="#1fff"
+        android:scrollbars="none"
+        >
+        <RelativeLayout
+            android:id="@+id/course_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

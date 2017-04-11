@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:jp="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.example.liwensheng.timetables.MainActivity">
+
+    <ImageView
+        android:id="@+id/background"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.liwensheng.timetables.NoScrollViewPager
+        android:layout_width="match_parent"
+        android:id="@+id/view_pager"
+        android:layout_marginBottom="48dp"
+        android:layout_height="match_parent"/>
+
+    <com.jpeng.jptabbar.JPTabBar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#9FFF"
+        app:TabTextSize="12sp"
+        jp:TabNormalColor="#000"
+        />
+</RelativeLayout>
