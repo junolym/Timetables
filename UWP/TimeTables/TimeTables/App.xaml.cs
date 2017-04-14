@@ -147,13 +147,13 @@ namespace TimeTables
             // Get a reference to the SQLite database
             conn = new SQLiteConnection("lessons.db");
             string sql = @"CREATE TABLE IF NOT EXISTS
-                          lessons (Id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                          lessons ( Id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                                     lessonName   VARCHAR( 140 ),
                                     lessonTeacher VARCHAR( 140 ),
                                     classRoom    VARCHAR( 140 ),
-                                    weekTime   INTEGER( 10 ),
-                                    startTime    INTEGER( 10 ),
-                                    endTime      INTEGER( 10 )
+                                    weekTime      VARCHAR( 140 ),
+                                    startJie    INTEGER( 10 ),
+                                    endJie   INTEGER( 10 )
                     );";
             using (var statement = conn.Prepare(sql))
             {

@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="TimeTables.ImportPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TimeTables"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid>
+                <TextBlock Margin="351,68,0,0" FontSize="28" Text="课表录入" Height="48" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Center" Width="127" />
+                <TextBlock Margin="167,157,0,0" FontSize="24" Text="学号"  Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89"/>
+                <TextBox Name="username" Margin="261,157,0,0" FontSize="22" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="319"/>
+                <TextBlock Margin="167,238,0,0" FontSize="24" HorizontalAlignment="Left" Width="89" Text="密码" Height="40" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="password" Margin="261,238,0,0" FontSize="20" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="319" />
+                <TextBlock Margin="167,333,0,0" FontSize="24" HorizontalAlignment="Left" Width="89" Text="验证码" Height="40" VerticalAlignment="Top"/>
+                <TextBox x:Name="j_code" Margin="261,333,0,0"  FontSize="22" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="146"/>
+                <Image Name="image" Source="Assets/Square44x44Logo.scale-200.png" Loaded="refreshImage" Tapped="refreshImage" Margin="444,333,0,0" Height="40" Width="Auto" VerticalAlignment="Top" HorizontalAlignment="Left"></Image>
+                <Button Name="getBtn" Click="getBtn_Click" Content="获取课表" Margin="351,411,0,0" VerticalAlignment="Top" FontSize="24" Height="57" HorizontalAlignment="Left" Width="127" />
+                <TextBox IsReadOnly="True" AcceptsReturn="True" BorderThickness="0" x:Name="info" Margin="284,494,0,0" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="237" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
